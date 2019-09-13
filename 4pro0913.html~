@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>Shrink Rotate</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <svg width=800 height=800>//svgの範囲を設定する
+    </div>
+    <script src="shrinkrotate.js"></script>//プログラムを作る
+  </body>
+</html>

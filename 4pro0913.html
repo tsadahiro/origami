@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Shrink Rotate</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      {{ message }}
+      <svg width=800 height=800>
+	<polygon v-for="p in polygons" :points="p" fill="blue" stroke="black"></polygon>
+	</svg>
+    </div>
+    <script src="shrinkrotate.js"></script>
+  </body>
+</html>
