@@ -8,7 +8,7 @@
     <div id="app">
       {{ message }}
       <svg width=800 height=800>
-	<polygon v-for="p in polygons" :points="p" fill="blue" stroke="black"></polygon>
+	<tile v-for="a in polygons" :pp="a"></tile>
 	</svg>
     </div>
     <script src="shrinkrotate.js"></script>

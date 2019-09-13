@@ -6,8 +6,11 @@
 
   <body>
     <div id="app">
-      <svg width=800 height=800>//svgの範囲を設定する
+      {{ message }}
+      <svg width=800 height=800>
+	<polygon v-for="p in polygons" :points="p" fill="blue" stroke="black"></polygon>
+	</svg>
     </div>
-    <script src="shrinkrotate.js"></script>//プログラムを作る
+    <script src="shrinkrotate.js"></script>
   </body>
 </html>
