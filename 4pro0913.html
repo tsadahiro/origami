@@ -6,9 +6,11 @@
 
   <body>
     <div id="app">
-      {{ message }}
+      
       <svg width=800 height=800>
-	<tile v-for="a in polygons" :pp="a"></tile>
+	
+	<circle v-for="a in choutenn" :cx="a.x" :cy="a.y" r=5></circle>
+	<polygon v-for="a in men" :points="points(a)" stroke="black" fill="red" opacity=0.5></polygon>
 	</svg>
     </div>
     <script src="shrinkrotate.js"></script>
