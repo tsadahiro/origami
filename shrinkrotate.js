@@ -4,7 +4,7 @@ Vue.component('tile',
 		  props:['pp'],
 		  methods:{
 		      test:function(){
-			  alert("cdf");
+			  alert("abc");
 		      }
 		  }
 	      }
