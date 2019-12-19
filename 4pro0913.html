@@ -6,17 +6,25 @@
 
   <body>
     <div id="app">
-      
-      <svg width=1000 height=800>
-	
-	<polygon v-for="a in men" :points="points(a)" stroke="black" fill="white" opacity=0.1></polygon>
-	<polygon v-for="a in shrunken.men" :points="points(a)" stroke="black" fill="red" fill-opacity=0.5></polygon>
-	<line v-for="e in shrunken.hen" :x1="choutenn[e[0]].x" :y1="choutenn[e[0]].y"
-	      :x2="choutenn[e[1]].x" :y2="choutenn[e[1]].y" stroke="black"></line>
-      </svg>
       <div>
-	<input type="range" v-model="cont" min=50 max=120>
-	<input type="range" v-model="theta" min="-90" max="90">
+      <button v-if="!folded" @click="fold"> 折る </button>
+      <button v-if="folded" @click="unfold"> 展開 </button>
+      <input type="checkbox" id="checkbox" v-model="alternate">
+      <label for="checkbox">{{alternate? "反転" : "同回転"}}</label>
+      </div>
+      
+      <div >
+	<svg  width=1000 height=800>
+	  <polygon v-if="!folded"　v-for="a in men" :points="points(a)" stroke="black" fill="white" opacity=0.1></polygon>
+	  <polygon v-for="(a,n) in shrunken.men" :points="points(a)" stroke="black"
+		   :fill="n=='0,0shrink'? 'blue':'white'" fill-opacity=0.5></polygon>
+	  <line  v-for="e in shrunken.hen" :x1="choutenn[e[0]].x" :y1="choutenn[e[0]].y"
+		:x2="choutenn[e[1]].x" :y2="choutenn[e[1]].y" stroke="black"></line>
+	</svg>
+	<div>
+	  <input type="range" v-model="cont" min=10 max=120>
+	  <input type="range" v-model="theta" min="-90" max="90">
+	</div>
       </div>
     </div>
     <script src="shrinkrotate.js"></script>
